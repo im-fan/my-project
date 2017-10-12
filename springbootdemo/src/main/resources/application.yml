@@ -2,3 +2,17 @@ server:
   port: 8080
   tomcat:
     uri-encoding: utf-8
+
+mybatis:
+  mapperLocations: classpath:mapper/*.xml
+  typeAliasesPackage: com.project.entity
+
+#MySQL
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/test?characterEncoding=utf8
+    username: root
+    password: 1234
+
+
