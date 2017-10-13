@@ -90,3 +90,48 @@
     @SpringBootTest
     //@SpringApplicationConfiguration(classes = StartController.class)// 1.4.0 前版本
     
+    
+#四、增加Druid数据源
+
+##1.增加maven配置
+    <!--druid数据源-->
+    <dependency>
+        <groupId>com.alibaba</groupId>
+        <artifactId>druid</artifactId>
+        <version>1.0.26</version>
+    </dependency>
+    
+##2.增加配置文件配置
+    spring:
+      datasource:
+        type: com.alibaba.druid.pool.DruidDataSource
+        username: root
+        password: 1234
+        driver-class-name: com.mysql.jdbc.Driver
+        filters: stat
+        maxActive: 20
+        initialSize: 1
+        maxWait: 60000
+        minIdle: 1
+        timeBetweenEvictionRunsMillis: 60000
+        minEvictableIdleTimeMillis: 300000
+        validationQueryTimeout: 900000
+        validationQuery: SELECT 1
+        testWhileIdle: true
+        testOnBorrow: true
+        testOnReturn: false
+        poolPreparedStatements: true
+        maxOpenPreparedStatements: 20
+        
+##3.增加相关类
+    主要：DruidDataSourceConfig.java
+    配合druid监控的使用：DruidStatFilter.java
+    配置监控界面：DruidStatViewServlet.java
+    
+    
+##4.启动类增加注解
+    增加：@ServletComponentScan  使servlet生效
+    
+##5.访问
+    启动项目，输入 http://localhost:8080/druid/index.html 访问druid控制台
+    
