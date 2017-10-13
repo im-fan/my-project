@@ -38,6 +38,20 @@
 ##4.注意项目结构，使用以上配置时，默认扫描启动类所在包下的文件夹，所以启动类要放在最顶层的文件夹中
 
 #二、整合Mybatis
-##1.增加mybatis-spring相关maven配置
-##2.启动类增加 @MapperScan(basePackages = "com.project.mapper") 扫描mapper方法所在文件夹
+##1.增加数据库和mybatis-spring相关maven配置
+    <!--数据库-->
+    <dependency>
+        <groupId>mysql</groupId>
+        <artifactId>mysql-connector-java</artifactId>
+        <version>5.1.39</version>
+    </dependency>
+
+    <!--mybatis-->
+    <dependency>
+        <groupId>org.mybatis.spring.boot</groupId>
+        <artifactId>mybatis-spring-boot-starter</artifactId>
+        <version>1.1.1</version>
+    </dependency>
+##2.启动类增加 
+    @MapperScan(basePackages = "com.project.mapper") 扫描mapper方法所在文件夹
     
