@@ -33,6 +33,12 @@
             <artifactId>mysql-connector-java</artifactId>
             <version>5.1.39</version>
         </dependency>
+        <!--druid数据源-->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid</artifactId>
+            <version>1.0.26</version>
+        </dependency>
 
         <!--mybatis-->
         <dependency>
@@ -47,6 +53,7 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+
     </dependencies>
 
 
