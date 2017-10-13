@@ -7,13 +7,9 @@ import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
 import java.util.List;
 
-@Service
-public class UserService {
+public interface UserService {
 
-    @Resource
-    private UserMapper userMapper;
+    List<User> findAll();
 
-    public List<User> findAll() {
-        return userMapper.findAll();
-    }
+    int addUser(User user);
 }

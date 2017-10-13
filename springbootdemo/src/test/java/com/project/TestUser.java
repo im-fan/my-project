@@ -26,4 +26,14 @@ public class TestUser {
         System.out.print(result);
     }
 
+    @Test
+    public void addUser(){
+        User user = new User();
+        user.setName("ccc");
+        user.setAge(24);
+        user.setAddress("地球");
+        int id = userService.addUser(user);
+        System.out.print(id);
+    }
+
 }

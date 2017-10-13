@@ -19,4 +19,8 @@
       select <include refid="all_column"/> from t_user;
     </select>
 
+    <insert id="addUser" parameterType="com.project.entity.User" useGeneratedKeys="true" keyProperty="id">
+      insert into t_user (name,age,address,create_time) VALUES (#{name},#{age},#{address},now());
+    </insert>
+
 </mapper>

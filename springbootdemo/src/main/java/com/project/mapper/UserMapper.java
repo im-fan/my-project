@@ -8,4 +8,5 @@ public interface UserMapper{
 
     List<User> findAll();
 
+    int addUser(User user);
 }
