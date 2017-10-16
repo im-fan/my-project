@@ -135,3 +135,14 @@
 ##5.访问
     启动项目，输入 http://localhost:8080/druid/index.html 访问druid控制台
     
+    
+#五、配置Logback
+
+##1.新建日志配置文件
+    详情见logback-boot.xml
+
+##2.加载配置文件
+    application.yml中增加配置
+    #配置日志
+    logging:
+      config: classpath:logback-boot.xml
