@@ -146,3 +146,13 @@
     #配置日志
     logging:
       config: classpath:logback-boot.xml
+
+#六、更换启动banner图
+
+##1.新建banner-xx.txt
+    文件里就是启动使用的banner
+##2.加载
+    application.yml中增加配置
+    #banner配置
+    banner:
+      location: banner-xx.txt

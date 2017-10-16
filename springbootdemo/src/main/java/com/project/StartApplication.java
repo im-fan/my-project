@@ -15,10 +15,9 @@ public class StartApplication {
     private static final Logger logger = LoggerFactory.getLogger(StartApplication.class);
 
     public static void main(String[] args){
-        logger.info("=====info=====启动日志");
-        logger.debug("=====debug=====启动日志");
-        logger.error("=====error=====启动日志");
+        logger.info("项目开始启动》》》");
         SpringApplication.run(StartApplication.class,args);
+        logger.info("项目启动成功》》》");
     }
 
 }

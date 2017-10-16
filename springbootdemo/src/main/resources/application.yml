@@ -1,8 +1,14 @@
+#banner配置
+banner:
+  location: banner-boot.txt
+
+#服务配置
 server:
   port: 8080
   tomcat:
     uri-encoding: utf-8
 
+#mybatis配置
 mybatis:
   mapperLocations: classpath:mapper/*.xml
   typeAliasesPackage: com.project.entity
