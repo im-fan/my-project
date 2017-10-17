@@ -156,3 +156,27 @@
     #banner配置
     banner:
       location: banner-xx.txt
+      
+      
+#七、整合Quartz定时任务
+
+##1.增加maven配置
+    <!--定时任务-->
+    <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-context-support</artifactId>
+    </dependency>
+    <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-tx</artifactId>
+    </dependency>
+    <dependency>
+        <groupId>org.quartz-scheduler</groupId>
+        <artifactId>quartz</artifactId>
+        <version>2.2.1</version>
+    </dependency>
+    
+##2.新增相关类
+    1.MyScheduler.java 定义任务配置
+    2.SchedulerListener.java 定义任务监听器
+    3.ScheduledJob.java 业务逻辑
