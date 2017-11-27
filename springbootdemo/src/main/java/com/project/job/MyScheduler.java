@@ -13,7 +13,7 @@ public class MyScheduler {
 
     public void scheduleJobs() throws SchedulerException {
         Scheduler scheduler = schedulerFactoryBean.getScheduler();
-        startJob1(scheduler);
+//        startJob1(scheduler);
 //        startJob2(scheduler);
     }
 

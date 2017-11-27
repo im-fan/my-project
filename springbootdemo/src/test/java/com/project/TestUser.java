@@ -1,6 +1,7 @@
 package com.project;
 
 
+import com.project.entity.PageInfo;
 import com.project.entity.User;
 import com.project.service.UserService;
 import org.junit.Test;
@@ -25,7 +26,7 @@ public class TestUser {
 
     @Test
     public void findAll(){
-        List<User> result= userService.findAll();
+        PageInfo result= userService.findAll();
         System.out.print(result);
     }
 

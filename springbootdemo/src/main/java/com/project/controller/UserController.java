@@ -1,5 +1,6 @@
 package com.project.controller;
 
+import com.project.entity.PageInfo;
 import com.project.entity.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -24,9 +25,9 @@ public class UserController {
 
     @RequestMapping("findAll")
     @ResponseBody
-    List<User> findAll(){
+    PageInfo findAll(){
 
-        List<User> result = userService.findAll();
+        PageInfo result = userService.findAll();
 
         return result;
     }

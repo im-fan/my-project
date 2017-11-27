@@ -1,5 +1,7 @@
 package com.project.service.impl;
 
+import com.main.annotation.Pagination;
+import com.project.entity.PageInfo;
 import com.project.entity.User;
 import com.project.mapper.UserMapper;
 import com.project.service.UserService;
@@ -19,10 +21,17 @@ public class UserServiceImpl implements UserService {
     private static final Logger logger = LoggerFactory.getLogger(UserServiceImpl.class);
 
     @Override
-    public List<User> findAll() {
+    @Pagination
+    public PageInfo findAll() {
         logger.info("=====info====findAll");
         logger.error("=====error=====findAll====");
-        return userMapper.findAll();
+        int pageSize = 0;
+        int pageNumber = 5;
+        List<User> result = userMapper.findAll();
+
+        int tot = result.size();
+
+        return new PageInfo(result,tot,pageNumber,pageSize);
     }
 
     @Override
