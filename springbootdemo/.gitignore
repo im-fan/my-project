@@ -1,6 +1,4 @@
-/target/
-.classpath
+target
 *.iml
 .idea
 *.log
-.idea/
