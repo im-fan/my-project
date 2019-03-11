@@ -1,9 +1,9 @@
 package com.project;
 
 
-import com.project.entity.PageInfo;
-import com.project.entity.User;
-import com.project.service.UserService;
+import com.project.web.entity.PageInfo;
+import com.project.web.entity.User;
+import com.project.web.service.UserService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;

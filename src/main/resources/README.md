@@ -40,7 +40,7 @@
     com.project
         StartApplication
         com.project.cotroller
-        com.project.service
+        com.project.web.service
         com.project.xxx
 
 #二、整合Mybatis
@@ -63,7 +63,7 @@
 
     mybatis:
       mapperLocations: classpath:mapper/*.xml
-      typeAliasesPackage: com.project.entity
+      typeAliasesPackage: com.project.web.entity
     
     #MySQL
     spring:

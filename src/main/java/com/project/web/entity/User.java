@@ -1,4 +1,4 @@
-package com.project.entity;
+package com.project.web.entity;
 
 public class User {
 

@@ -11,7 +11,7 @@ server:
 #mybatis配置
 mybatis:
   mapperLocations: classpath:mapper/*.xml
-  typeAliasesPackage: com.project.entity
+  typeAliasesPackage: com.project.web.entity
 
 #MySQL
 #spring:

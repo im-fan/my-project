@@ -1,4 +1,4 @@
-package com.project.job;
+package com.project.web.job;
 
 import org.quartz.SchedulerException;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,6 +1,6 @@
 package com.main;
 
-import com.project.entity.PageInfo;
+import com.project.web.entity.PageInfo;
 
 public class PageUtil {
 
