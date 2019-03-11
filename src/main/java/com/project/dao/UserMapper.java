@@ -1,4 +1,4 @@
-package com.project.mapper;
+package com.project.dao;
 
 import com.project.entity.User;
 

@@ -3,7 +3,7 @@ package com.project.service.impl;
 import com.main.annotation.Pagination;
 import com.project.entity.PageInfo;
 import com.project.entity.User;
-import com.project.mapper.UserMapper;
+import com.project.dao.UserMapper;
 import com.project.service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

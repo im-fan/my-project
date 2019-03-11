@@ -3,7 +3,7 @@
 
     <include resource="org/springframework/boot/logging/logback/base.xml"/>
 
-    <property name="log_name" value="/Users/fan/myproject/logs/" />
+    <property name="log_name" value="~/Users/mac/work/project/my/log" />
 
     <!--输出到控制台-->
     <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
@@ -16,9 +16,9 @@
 
     <!--info日志-->
     <appender name="INFO" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <File>${log_name}/springbootdemo_info.log</File>
+        <File>${log_name}/info.log</File>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <FileNamePattern>${log_name}/springbootdemo_info-%d{yyyy-MM-dd}.log</FileNamePattern>
+            <FileNamePattern>${log_name}/info-%d{yyyy-MM-dd}.log</FileNamePattern>
             <!--日志最长保留天数-->
             <maxHistory>30</maxHistory>
         </rollingPolicy>
@@ -34,9 +34,9 @@
 
     <!--error日志-->
     <appender name="ERROR" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <File>${log_name}/springbootdemo_error.log</File>
+        <File>${log_name}/error.log</File>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <FileNamePattern>${log_name}/springbootdemo_error-%d{yyyy-MM-dd}.log</FileNamePattern>
+            <FileNamePattern>${log_name}/error-%d{yyyy-MM-dd}.log</FileNamePattern>
             <!--日志最长保留天数-->
             <maxHistory>30</maxHistory>
         </rollingPolicy>
