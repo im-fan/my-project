@@ -4,7 +4,7 @@ import com.project.web.entity.PageInfo;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-import com.project.web.service.UserService;
+import com.project.web.service.user.UserService;
 
 import javax.annotation.Resource;
 

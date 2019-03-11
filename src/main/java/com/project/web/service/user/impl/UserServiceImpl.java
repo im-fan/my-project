@@ -1,10 +1,10 @@
-package com.project.web.service.impl;
+package com.project.web.service.user.impl;
 
 import com.main.annotation.Pagination;
 import com.project.web.entity.PageInfo;
 import com.project.web.entity.User;
 import com.project.web.dao.UserMapper;
-import com.project.web.service.UserService;
+import com.project.web.service.user.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;

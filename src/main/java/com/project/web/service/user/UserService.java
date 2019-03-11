@@ -1,4 +1,4 @@
-package com.project.web.service;
+package com.project.web.service.user;
 
 import com.project.web.entity.PageInfo;
 import com.project.web.entity.User;
