@@ -12,9 +12,9 @@ import java.util.List;
  */
 public interface EsService {
 
-    void saveEs(EsEntity esEntity);
+    String saveEs(EsEntity esEntity);
 
-    void saveListEs(List<EsEntity> esEntityList);
+    String saveListEs(List<EsEntity> esEntityList);
 
     List<EsEntity> searchEsEntity(String searchContent);
 

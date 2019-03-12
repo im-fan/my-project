@@ -22,11 +22,11 @@ public class EsServiceImpl implements EsService {
 
     private Logger log = LoggerFactory.getLogger(this.getClass());
 
-    @Autowired
+//    @Autowired
     private JestClient jestClient;
 
     @Override
-    public void saveEs(EsEntity esEntity) {
+    public String saveEs(EsEntity esEntity) {
         Index index = new Index.Builder(esEntity)
                 .index(EsEntity.INDEX_NAME)
                 .type(EsEntity.TYPE)
@@ -37,11 +37,13 @@ public class EsServiceImpl implements EsService {
             log.info("保存至es操作完成");
         } catch (Exception e){
             log.info("保存至ES操作异常，msg={}",e.getMessage());
+            return "操作失败";
         }
+        return "操作成功";
     }
 
     @Override
-    public void saveListEs(List<EsEntity> esEntityList) {
+    public String saveListEs(List<EsEntity> esEntityList) {
         Bulk.Builder bulk = new Bulk.Builder();
         for(EsEntity entity : esEntityList) {
             Index index = new Index.Builder(entity)
@@ -52,9 +54,11 @@ public class EsServiceImpl implements EsService {
         try {
             jestClient.execute(bulk.build());
             log.info("ES 插入完成");
+            return "操作失败";
         } catch (IOException e) {
             log.error("es插入异常,%s",e.getMessage());
         }
+        return "操作成功";
     }
 
     @Override

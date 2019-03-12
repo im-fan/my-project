@@ -14,7 +14,6 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest
-//@SpringApplicationConfiguration(classes = StartController.class)// 1.4.0 前版本
 public class TestUser {
 
     @Autowired
