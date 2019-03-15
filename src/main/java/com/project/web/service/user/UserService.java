@@ -8,4 +8,7 @@ public interface UserService {
     PageInfo findAll();
 
     int addUser(User user);
+
+    User printUser();
+
 }
