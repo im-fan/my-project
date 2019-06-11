@@ -1,5 +1,8 @@
 package com.project.arithmetic;
 
+import com.project.util.LocalDateUtil;
+import lombok.val;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -51,9 +54,38 @@ public class NodeNumbers {
         for(char a : totCh){
             System.out.print(a + "====");
         }
+        System.out.println();
     }
 
+    public static void addTwoNumbersTwo(ListNode l1, ListNode l2) {
+
+        Integer first = 0;
+        Integer second = 0;
+        int i=0;
+
+        while(l1 != null){
+            first = first + l1.val * Double.valueOf(Math.pow(10,i)).intValue();
+            l1 = l1.next;
+
+            second = second + l2.val * Double.valueOf(Math.pow(10,i)).intValue();
+            l2 = l2.next;
+            i++;
+        }
+
+        String tot = String.valueOf(first + second);
+        char[] totCh = tot.toCharArray();
+
+        for(char a : totCh){
+            System.out.print(a + "====");
+        }
+        System.out.println();
+    }
+
+
+
+
     public static void main(String[] args){
+
         ListNode aa = new ListNode(2);
         aa.next = new ListNode(4);
         aa.next.next = new ListNode(3);
@@ -62,12 +94,20 @@ public class NodeNumbers {
         bb.next = new ListNode(6);
         bb.next.next = new ListNode(4);
 
-        addTwoNumbers(aa,bb);
+        long startTime = LocalDateUtil.currentTimeMillis();
+//        addTwoNumbers(aa,bb);
+//        long firstTime = LocalDateUtil.currentTimeMillis();
+//        System.out.println("耗时===>"+(firstTime - startTime));
+
+        long secondTime = LocalDateUtil.currentTimeMillis();
+        addTwoNumbersTwo(aa,bb);
+        System.out.println("耗时===>"+(secondTime - startTime));
+
     }
 
 }
 
-class ListNode {
+class  ListNode {
     int val;
     ListNode next;
     ListNode(int x) { val = x; }
