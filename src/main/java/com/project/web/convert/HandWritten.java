@@ -1,6 +1,6 @@
 package com.project.web.convert;
 
-import com.project.util.LocalDateUtil;
+import com.main.utils.LocalDateUtil;
 import org.springframework.context.annotation.Configuration;
 
 import java.util.Date;

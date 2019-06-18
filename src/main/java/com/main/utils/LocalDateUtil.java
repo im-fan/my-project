@@ -1,4 +1,4 @@
-package com.project.util;
+package com.main.utils;
 
 import org.joda.time.DateTime;
 import org.joda.time.format.DateTimeFormat;

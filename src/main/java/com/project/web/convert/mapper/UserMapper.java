@@ -1,6 +1,6 @@
 package com.project.web.convert.mapper;
 
-import com.project.util.LocalDateUtil;
+import com.main.utils.LocalDateUtil;
 import com.project.web.entity.dto.UserDto;
 import com.project.web.entity.po.UserPo;
 import com.project.web.convert.HandWritten;
@@ -8,7 +8,6 @@ import org.mapstruct.InheritConfiguration;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.Mappings;
-import org.mapstruct.factory.Mappers;
 
 import java.util.List;
 
