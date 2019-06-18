@@ -16,7 +16,7 @@ import java.util.concurrent.TimeUnit;
  */
 public class LocalDateUtil {
 
-    public static void main(String[] args) {
+    public static void man(String[] args) {
 
         Date date = strToDate("2018-08-21 15:16:00", DatePattern.LONG);
 
