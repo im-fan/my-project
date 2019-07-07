@@ -1,4 +1,4 @@
-package com.project.web.dao;
+package com.project.web.dao.main;
 
 import com.project.web.entity.User;
 

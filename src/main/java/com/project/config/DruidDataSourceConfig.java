@@ -22,7 +22,7 @@ import java.util.Map;
 import java.util.Properties;
 
 @Configuration
-@MapperScan(basePackages = "com.project.web.dao",
+@MapperScan(basePackages = "com.project.web.dao.main",
         sqlSessionFactoryRef = "mainSqlSessionFactory")
 public class DruidDataSourceConfig {
 
@@ -45,6 +45,7 @@ public class DruidDataSourceConfig {
         return dataSource;
     }
 
+    /** 多个数据源时需要指定事务管理器，否则会默认主事务管理器，导致事务失败 **/
     @Bean(name = "mainTransactionManager")
     @Primary
     public DataSourceTransactionManager mainTransactionManager(@Qualifier("mainDataSource") DataSource mainDataSource) {

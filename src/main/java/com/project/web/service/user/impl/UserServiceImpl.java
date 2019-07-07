@@ -4,12 +4,12 @@ import com.alibaba.fastjson.JSONObject;
 import com.main.annotation.Pagination;
 import com.project.web.entity.PageInfo;
 import com.project.web.entity.User;
-import com.project.web.dao.UserMapper;
+import com.project.web.dao.main.UserMapper;
 import com.project.web.service.user.UserService;
-import org.joda.time.DateTime;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -37,6 +37,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    @Transactional(rollbackFor = Exception.class,timeout = 3,transactionManager = "mainTransactionManager")
     public int addUser(User user) {
         return userMapper.addUser(user);
     }
