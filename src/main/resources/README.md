@@ -177,6 +177,42 @@
     </dependency>
     
 ##2.新增相关类
+```text
     1.MyScheduler.java 定义任务配置
     2.SchedulerListener.java 定义任务监听器
     3.ScheduledJob.java 业务逻辑
+```
+
+# 八、整合RocketMQ
+###1.增加jar包
+```text
+<dependency>
+    <groupId>org.apache.rocketmq</groupId>
+    <artifactId>rocketmq-client</artifactId>
+    <version>4.5.1</version>
+</dependency>
+```
+
+###2.增加配置
+```text
+rocketmq:
+  consumer:
+    groupName: ConsumerGroupOne # 消费者的组名
+    consumeThreadMin: 2
+    consumeThreadMax: 5
+    consumeMessageBatchMaxSize: 10
+    topics: TopicOne
+  producer:
+    groupName: ProducerGroupOne # 生产者的组名
+    maxMessageSize: 100
+    sendMsgTimeout: 1000
+    retryTimesWhenSendFailed: 3
+  namesrvAddr: 127.0.0.1:9876 # NameServer地址
+```
+
+###3.代码
+```text
+1.consumer&producer类增加注解@Service,实现CommandLineRunner
+2.使用@Value("${xx}")读取配置
+3.实现业务
+```

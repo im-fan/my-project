@@ -49,12 +49,28 @@ logging:
   config: classpath:logback-boot.xml
 
 #es
-#spring:
-#  data:
-#    elasticsearch:
-#      cluster-name: my-es # 集群名
+spring:
+  data:
+    elasticsearch:
+      cluster-name: my-es # 集群名
       #连接节点,注意在集群中通信都是9300端口，否则会报错无法连接上！
-#      cluster-nodes: 0.0.0.0:9300
-#      local: true #是否本地连接
-#      repositories:
-#        enabled: true #仓库中数据存储
+      cluster-nodes: 0.0.0.0:9300
+      local: true #是否本地连接
+      repositories:
+        enabled: true #仓库中数据存储
+
+
+#rocket mq
+rocketmq:
+  consumer:
+    groupName: ConsumerGroupOne # 消费者的组名
+    consumeThreadMin: 2
+    consumeThreadMax: 5
+    consumeMessageBatchMaxSize: 10
+    topics: TopicOne
+  producer:
+    groupName: ProducerGroupOne # 生产者的组名
+    maxMessageSize: 100
+    sendMsgTimeout: 1000
+    retryTimesWhenSendFailed: 3
+  namesrvAddr: 127.0.0.1:9876 # NameServer地址

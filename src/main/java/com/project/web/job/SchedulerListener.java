@@ -8,6 +8,12 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.scheduling.quartz.SchedulerFactoryBean;
 
+/**
+ * 定时器监听器
+ *
+ *@author: Weiyf
+ *@Date: 2019-07-10 17:25
+ */
 @Configuration
 public class SchedulerListener implements ApplicationListener<ContextRefreshedEvent> {
     @Autowired

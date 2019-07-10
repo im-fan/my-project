@@ -22,7 +22,7 @@ public class EsServiceImpl implements EsService {
 
     private Logger log = LoggerFactory.getLogger(this.getClass());
 
-//    @Autowired
+    @Autowired
     private JestClient jestClient;
 
     @Override

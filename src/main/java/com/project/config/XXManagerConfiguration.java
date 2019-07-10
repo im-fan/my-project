@@ -9,8 +9,8 @@ import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 
-@ComponentScan("com.xxx.configuration")
-@Configuration
+//@ComponentScan("com.xxx.configuration")
+//@Configuration
 public class XXManagerConfiguration extends WebMvcConfigurerAdapter implements ApplicationContextAware {
 
     private static ApplicationContext context;
@@ -22,7 +22,7 @@ public class XXManagerConfiguration extends WebMvcConfigurerAdapter implements A
      */
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        // Session校验拦截器
+        // 拦截器
 //        registry.addInterceptor(checkInterceptor);
     }
 
