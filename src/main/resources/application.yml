@@ -74,3 +74,35 @@ rocketmq:
     sendMsgTimeout: 1000
     retryTimesWhenSendFailed: 3
   namesrvAddr: 127.0.0.1:9876 # NameServer地址
+
+
+#binlog配置
+binlog:
+  serverId: 1
+  host: localhost
+  port: 3306
+  user: root
+  password: maidao123
+  database:
+    table: ygg_sale_platform.product
+
+---
+spring:
+  profiles: dev
+
+logging:
+  level:
+    com.project.web: DEBUG
+
+
+---
+spring:
+  profiles: test
+
+logging:
+  level:
+    com.project.web: DEBUG
+
+---
+spring:
+  profiles: release
