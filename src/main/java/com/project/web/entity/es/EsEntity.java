@@ -8,8 +8,10 @@ import lombok.Setter;
 @Setter
 public class EsEntity {
 
-    public static final String INDEX_NAME = "index_user";
+    /** database **/
+    public static final String INDEX_NAME = "product";
 
+    /** table **/
     public static final String TYPE = "estype";
 
     @ApiModelProperty("id")

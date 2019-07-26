@@ -4,6 +4,7 @@ import com.main.utils.LocalDateUtil;
 import com.project.web.entity.dto.UserDto;
 import com.project.web.entity.po.UserPo;
 import com.project.web.convert.HandWritten;
+import com.project.web.entity.po.UserTwoPo;
 import org.mapstruct.InheritConfiguration;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
@@ -29,6 +30,9 @@ public interface UserMapper {
 //            @Mapping(source = "marryDay",target = "marryDay",dateFormat = "yyyy-MM-dd HH:mm:ss")
     })
     UserDto toDto(UserPo userPo);
+
+    /** 继承类转换 **/
+    UserDto toDtoTwo(UserTwoPo po);
 
     @InheritConfiguration(name = "toDto")
     List<UserDto> toDots(List<UserPo> userPos);

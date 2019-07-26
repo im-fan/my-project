@@ -23,10 +23,10 @@ server:
   # 使用druid数据源
 dataSource:
   main:
-    url: jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=UTF8&zeroDateTimeBehavior=convertToNull&autoReconnect=true&allowMultiQueries=true&tinyInt1isBit=false
+    url: jdbc:mysql://localhost:3306/ygg_sale_platform?useUnicode=true&characterEncoding=UTF8&zeroDateTimeBehavior=convertToNull&autoReconnect=true&allowMultiQueries=true&tinyInt1isBit=false
     type: com.alibaba.druid.pool.DruidDataSource
     username: root
-    password: maidao123
+    password: 123456
     driver-class-name: com.mysql.jdbc.Driver
     filters: stat
     maxActive: 20
@@ -82,7 +82,7 @@ binlog:
   host: localhost
   port: 3306
   user: root
-  password: maidao123
+  password: 123456
   database:
     table: ygg_sale_platform.product
 

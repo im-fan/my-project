@@ -43,8 +43,11 @@ public class ProducerService {
     @Value("${rocketmq.consumer.topics}")
     private String topics;
 
-    /** 发送消息调用方法 **/
-    private void sendMsg(Object obj){
+    /** 发送消息调用方法
+     *
+     * binlog to es
+     * **/
+    public void sendMsg(Object obj){
 
         try{
             String tag = "TagA";

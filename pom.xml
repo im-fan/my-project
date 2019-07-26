@@ -202,6 +202,13 @@
             <version>0.18.1</version>
         </dependency>
 
+        <!--gitlabAPI-->
+        <!--<dependency>
+            <groupId>org.gitlab</groupId>
+            <artifactId>java-gitlab-api</artifactId>
+            <version>4.1.0</version>
+        </dependency>-->
+
     </dependencies>
 
     <build>
