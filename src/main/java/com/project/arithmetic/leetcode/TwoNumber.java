@@ -1,4 +1,4 @@
-package com.project.arithmetic;
+package com.project.arithmetic.leetcode;
 
 import com.alibaba.fastjson.JSONObject;
 import com.google.gson.JsonObject;

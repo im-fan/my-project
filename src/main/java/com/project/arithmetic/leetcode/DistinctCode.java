@@ -1,7 +1,4 @@
-package com.project.arithmetic;
-
-import java.util.HashMap;
-import java.util.Map;
+package com.project.arithmetic.leetcode;
 
 /**
  * 3. 无重复字符的最长子串
