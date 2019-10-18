@@ -5,14 +5,11 @@ import com.alibaba.excel.ExcelWriter;
 import com.alibaba.excel.support.ExcelTypeEnum;
 import com.alibaba.excel.write.merge.LoopMergeStrategy;
 import com.alibaba.excel.write.metadata.WriteSheet;
-import com.alibaba.fastjson.JSONObject;
 import com.main.utils.ExcelUtil;
 import com.project.web.entity.excel.HeadExcelDemo;
 import com.project.web.entity.excel.SimpleDemo;
-import io.swagger.models.Swagger;
 import org.junit.Test;
 
-import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
 
