@@ -6,6 +6,7 @@ import com.project.web.entity.PageInfo;
 import com.project.web.entity.User;
 import com.project.web.dao.main.UserMapper;
 import com.project.web.service.user.UserService;
+import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
@@ -14,6 +15,7 @@ import org.springframework.transaction.annotation.Transactional;
 import javax.annotation.Resource;
 import java.util.List;
 
+@Slf4j
 @Service
 public class UserServiceImpl implements UserService {
 
@@ -25,12 +27,10 @@ public class UserServiceImpl implements UserService {
     @Override
     @Pagination
     public PageInfo findAll() {
-        logger.info("=====info====findAll");
-        logger.error("=====error=====findAll====");
         int pageSize = 0;
         int pageNumber = 5;
         List<User> result = userMapper.findAll();
-
+        log.info("result={}",JSONObject.toJSONString(result));
         int tot = result.size();
 
         return new PageInfo(result,tot,pageNumber,pageSize);

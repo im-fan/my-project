@@ -1,5 +1,6 @@
 package com.main;
 
+import com.alibaba.fastjson.JSONObject;
 import com.project.web.entity.PageInfo;
 
 public class PageUtil {
@@ -20,9 +21,6 @@ public class PageUtil {
         page.setStartPage(StartPage);
         page.setPageSize(PageSize);
         LOCAL_PAGE.set(page);
-
-
-        System.out.println("info=====>"+LOCAL_PAGE.get());
 
     }
 

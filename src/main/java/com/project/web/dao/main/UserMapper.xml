@@ -8,11 +8,12 @@
         <result column="name" property="name" javaType="java.lang.String" />
         <result column="age" property="age" javaType="java.lang.Integer"/>
         <result column="address" property="address" javaType="java.lang.String" />
+        <result column="desc" property="desc" javaType="java.lang.String" />
         <result column="create_time" property="createTime" javaType="java.lang.String" />
     </resultMap>
 
     <sql id="all_column">
-        id,name,age,address,create_time
+        id,name,age,`desc`,address,create_time
     </sql>
     
     <select id="findAll" resultMap="ResultMap">

@@ -4,6 +4,8 @@ public class PageInfo<T> {
 
     private int startPage;
     private int pageSize;
+    private int tot;
+    private T data;
 
     public int getTot() {
         return tot;
@@ -13,16 +15,15 @@ public class PageInfo<T> {
         this.tot = tot;
     }
 
-    public T getObject() {
-        return object;
+    public T getData() {
+        return data;
     }
 
-    public void setObject(T object) {
-        this.object = object;
+    public void setData(T data) {
+        this.data = data;
     }
 
-    private int tot;
-    private T object;
+
 
     public int getStartPage() {
         return startPage;
@@ -36,12 +37,12 @@ public class PageInfo<T> {
     public void setPageSize(int pageSize) {
         this.pageSize = pageSize;
     }
-    public PageInfo(T object,int tot,int startPage, int pageSize) {
+    public PageInfo(T data,int tot,int startPage, int pageSize) {
         super();
         this.startPage = startPage;
         this.pageSize = pageSize;
         this.tot = tot;
-        this.object = object;
+        this.data = data;
     }
     public PageInfo() {
         super();

@@ -1,5 +1,7 @@
 package com.main.spring.proxy;
 
+import com.alibaba.fastjson.JSONObject;
+import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -35,7 +37,7 @@ public class LogProxy implements InvocationHandler {
 
             result = method.invoke(proxyObj,args);
 
-            log.info(" {} 执行结束 《《《",method.getName());
+            log.info(" {} 执行结束 result={}",method.getName(), JSONObject.toJSONString(result));
         } catch (Exception e){
             log.error("方法执行异常，error={}",e.getMessage());
         }
