@@ -1,8 +1,7 @@
 package com.project.web.service.es;
 
-import com.project.web.entity.es.EsEntity;
-
-import java.util.List;
+import com.project.web.entity.es.Product;
+import org.springframework.data.domain.Page;
 
 /**
  * es相关方法
@@ -12,10 +11,6 @@ import java.util.List;
  */
 public interface EsService {
 
-    String saveEs(EsEntity esEntity);
-
-    String saveListEs(List<EsEntity> esEntityList);
-
-    List<EsEntity> searchEsEntity(String searchContent);
+    Page<Product> search(String searchContent);
 
 }

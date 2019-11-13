@@ -1,81 +1,62 @@
 package com.project.web.service.es.impl;
 
-import com.project.web.entity.es.EsEntity;
+import com.project.web.dao.es.ProductCustom;
+import com.project.web.entity.es.Product;
 import com.project.web.service.es.EsService;
-import io.searchbox.client.JestClient;
-import io.searchbox.client.JestResult;
-import io.searchbox.core.Bulk;
-import io.searchbox.core.Index;
-import io.searchbox.core.Search;
 import org.elasticsearch.index.query.QueryBuilders;
-import org.elasticsearch.search.builder.SearchSourceBuilder;
+import org.elasticsearch.index.query.functionscore.FunctionScoreQueryBuilder;
+import org.elasticsearch.index.query.functionscore.ScoreFunctionBuilders;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.elasticsearch.core.query.NativeSearchQueryBuilder;
+import org.springframework.data.elasticsearch.core.query.SearchQuery;
 import org.springframework.stereotype.Service;
 
-import java.io.IOException;
-import java.util.List;
-
+/**
+ * es demo
+ *
+ *@author: Weiyf
+ *@Date: 2019-11-13 14:56
+ */
 @Service
 public class EsServiceImpl implements EsService {
 
     private Logger log = LoggerFactory.getLogger(this.getClass());
 
     @Autowired
-    private JestClient jestClient;
+    private ProductCustom repository;
 
     @Override
-    public String saveEs(EsEntity esEntity) {
-        Index index = new Index.Builder(esEntity)
-                .index(EsEntity.INDEX_NAME)
-                .type(EsEntity.TYPE)
-                .build();
-        try{
+    public Page<Product> search(String searchContent){
 
-            jestClient.execute(index);
-            log.info("保存至es操作完成");
-        } catch (Exception e){
-            log.info("保存至ES操作异常，msg={}",e.getMessage());
-            return "操作失败";
-        }
-        return "操作成功";
+        SearchQuery queryBuilder = getEntitySearchQuery(1,10,searchContent);
+        Page<Product> goodsPage = repository.search(queryBuilder);
+        return goodsPage;
+
     }
 
-    @Override
-    public String saveListEs(List<EsEntity> esEntityList) {
-        Bulk.Builder bulk = new Bulk.Builder();
-        for(EsEntity entity : esEntityList) {
-            Index index = new Index.Builder(entity)
-                    .index(EsEntity.INDEX_NAME)
-                    .type(EsEntity.TYPE).build();
-            bulk.addAction(index);
-        }
-        try {
-            jestClient.execute(bulk.build());
-            log.info("ES 插入完成");
-            return "操作失败";
-        } catch (IOException e) {
-            log.error("es插入异常,%s",e.getMessage());
-        }
-        return "操作成功";
+    private SearchQuery getEntitySearchQuery(int pageNumber, int pageSize, String searchContent) {
+        QueryBuilders.matchPhraseQuery("title", searchContent);
+        FunctionScoreQueryBuilder functionScoreQueryBuilder = QueryBuilders.functionScoreQuery()
+                .add(QueryBuilders.matchPhraseQuery("title", searchContent),
+                        ScoreFunctionBuilders.weightFactorFunction(100))
+                .add(QueryBuilders.matchPhraseQuery("productDesc", searchContent),
+                        ScoreFunctionBuilders.weightFactorFunction(100))
+                //设置权重分 求和模式
+                .scoreMode("sum")
+                //设置权重分最低分
+                .setMinScore(10);
+
+        // 设置分页
+        Pageable pageable = new PageRequest(pageNumber, pageSize);
+        return new NativeSearchQueryBuilder()
+                .withPageable(pageable)
+                .withQuery(functionScoreQueryBuilder).build();
     }
 
-    @Override
-    public List<EsEntity> searchEsEntity(String searchContent) {
-        SearchSourceBuilder searchSourceBuilder = new SearchSourceBuilder();
-        //searchSourceBuilder.query(QueryBuilders.queryStringQuery(searchContent));
-        //searchSourceBuilder.field("name");
-        searchSourceBuilder.query(QueryBuilders.matchQuery("name",searchContent));
-        Search search = new Search.Builder(searchSourceBuilder.toString())
-                .addIndex(EsEntity.INDEX_NAME).addType(EsEntity.TYPE).build();
-        try {
-            JestResult result = jestClient.execute(search);
-            return result.getSourceAsObjectList(EsEntity.class);
-        } catch (IOException e) {
-            log.error(e.getMessage());
-            e.printStackTrace();
-        }
-        return null;
-    }
+
 }

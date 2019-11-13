@@ -1,10 +1,8 @@
 package com.project.arithmetic.leetcode;
 
 import com.alibaba.fastjson.JSONObject;
-import com.google.gson.JsonObject;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 /**
