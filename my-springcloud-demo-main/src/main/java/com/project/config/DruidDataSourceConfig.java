@@ -22,7 +22,7 @@ import java.util.Map;
 import java.util.Properties;
 
 @Configuration
-@MapperScan(basePackages = "com.project.es.web.dao.main",
+@MapperScan(basePackages = "com.project.web.dao.main",
         sqlSessionFactoryRef = "mainSqlSessionFactory")
 public class DruidDataSourceConfig {
 
