@@ -10,6 +10,7 @@ import lombok.Setter;
 public class Resp<T> {
 
     public static final int Success = 200;
+    public static final int Failed = 400;
 
     @ApiModelProperty("状态码")
     private int status;
@@ -34,5 +35,10 @@ public class Resp<T> {
     public static Resp success(){
         return new Resp(Success,null,"成功");
     }
+
+    public static Resp failed(String msg){
+        return new Resp(Failed,null,msg);
+    }
+
 
 }

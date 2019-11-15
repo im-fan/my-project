@@ -1,9 +1,7 @@
 package com.project.es.web.entity.es;
 
-import lombok.*;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.elasticsearch.annotations.Document;
-import org.springframework.data.elasticsearch.annotations.Field;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * es model
@@ -13,16 +11,16 @@ import org.springframework.data.elasticsearch.annotations.Field;
  */
 @Getter
 @Setter
-@Document(indexName = "products",type = "docs", shards = 1,replicas = 0, refreshInterval = "-1")
+//@Document(indexName = "products",type = "docs", shards = 1,replicas = 0, refreshInterval = "-1")
 public class Product {
 
-    @Id
+//    @Id
     private String id;
 
-    @Field
+//    @Field
     private String title;
 
-    @Field
+//    @Field
     private String productDesc;
 
 }
