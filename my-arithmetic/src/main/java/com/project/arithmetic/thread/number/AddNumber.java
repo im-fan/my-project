@@ -40,11 +40,11 @@ public class AddNumber {
                 try{
                     lock.lock();
                     System.out.println(Thread.currentThread().getName()+" 开始操作===》"+System.currentTimeMillis());
-                    Thread.sleep(50);
                     addNumber.listTot.add(addNumber.idx,
                             addNumber.listA.get(addNumber.idx) +
                                     addNumber.listB.get(addNumber.idx));
 
+                    Thread.sleep(1000);
                 } catch (RuntimeException| InterruptedException e){
                     System.out.println(e);
                 } finally {
@@ -70,11 +70,11 @@ public class AddNumber {
                 try{
                     lock.lock();
                     System.out.println(Thread.currentThread().getName()+" 开始操作===》"+System.currentTimeMillis());
-                    Thread.sleep(50);
                     addNumber.listTot.add(addNumber.idx,
                             addNumber.listA.get(addNumber.idx) +
                                     addNumber.listB.get(addNumber.idx));
 
+                    Thread.sleep(500);
                 } catch (RuntimeException | InterruptedException e){
                     System.out.println(e);
                 } finally {
