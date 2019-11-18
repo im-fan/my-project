@@ -10,14 +10,15 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("es/api")
+@RequestMapping("es")
 public class EsApiController {
 
     @Autowired
     private EsApiService esApiService;
 
-    @GetMapping
-    public Resp<String> searchByContext(@RequestParam("context") String context){
+
+    @GetMapping("/api")
+    public Resp<String> apiSearch(@RequestParam("context") String context){
         if(StringUtils.isBlank(context)){
             return Resp.failed(context);
         }

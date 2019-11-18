@@ -14,15 +14,15 @@ logging:
   config: classpath:logback-boot.xml
 
 #es-jpa方式-引入的jar包版本号要与客户端版本一致
-#spring:
-#  data:
-#    elasticsearch:
-#      cluster-name: esCluster # 集群名
-#      #连接节点,注意在集群中通信都是9300端口，否则会报错无法连接上！
-#      cluster-nodes: 117.0.0.1.129:9300
-#      local: true #是否本地连接
-#      repositories:
-#        enabled: true #仓库中数据存储
+spring:
+  data:
+    elasticsearch:
+      cluster-name: esCluster # 集群名
+      #连接节点,注意在集群中通信都是9300端口，否则会报错无法连接上！
+      cluster-nodes: 127.0.0.1:9300
+      local: true #是否本地连接
+      repositories:
+        enabled: true #仓库中数据存储
 
 #es-RestClient方式
 es:

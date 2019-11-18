@@ -48,22 +48,14 @@ public class EsApiServiceImpl implements EsApiService {
         Response response = null;
         try {
 
-
             // 将数据丢进去，这里一定要外包一层“doc”，否则内部不能识别
             JSONObject jsonObject = new JSONObject();
-            jsonObject.put("query", JSON.parseObject("{\n" +
-                    "    \"simple_query_string\": {\n" +
-                    "      \"query\": \""+context+"\",\n" +
-                    "      \"fields\": [\"title\"]\n" +
-                    "    }\n" +
-                    "}"));
+            jsonObject.put("query", JSON.parseObject("{\"simple_query_string\": {\"query\": \""+context+"\",\"fields\": [\"title\"]}}"));
             request.setEntity(new NStringEntity(jsonObject.toString(),ContentType.APPLICATION_JSON));
             // 还可以将其设置为String，默认为ContentType为application/json
-            //request.setJsonEntity("{\"json\":\"text\"}");
 
             // 添加json返回优化
             request.addParameter("pretty", "true");
-
 
             // 执行HTTP请求
             response = client.performRequest(request);
@@ -78,6 +70,7 @@ public class EsApiServiceImpl implements EsApiService {
             return Resp.failed("查询异常");
         }
     }
+
 
 
     /** 解析返回信息 **/
