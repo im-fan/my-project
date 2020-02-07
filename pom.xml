@@ -16,6 +16,7 @@
         <module>my-springcloud-main</module>
         <module>my-project-utils</module>
         <module>my-arithmetic</module>
+        <module>my-sso</module>
     </modules>
 
 </project>

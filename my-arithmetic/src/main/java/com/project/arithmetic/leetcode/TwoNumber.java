@@ -17,27 +17,46 @@ import java.util.List;
  */
 public class TwoNumber {
 
-    private static int[] findTwoNumberIndex(int[] numbers,int target){
+    public static int[] twoSum(int[] numbers, int target) {
 
-        int[] result = new int[0];
-        List<Integer> list = new ArrayList<>();
-        for(int a : numbers){
-            list.add(a);
-        }
-
-        for(int a : list){
-            int b = target - a;
-            if(list.contains(b)){
-                result = new int[]{list.indexOf(a), list.indexOf(b)};
+        int[] res = new int[2];
+        int low = 0;
+        int high = numbers.length - 1;
+        while (low < high) {
+            if (numbers[low] + numbers[high] > target) {
+                high--;
+            }
+            else if (numbers[low] + numbers[high] < target) {
+                low++;
+            }
+            else {
+                res[0] = low + 1;
+                res[1] = high + 1;
                 break;
             }
         }
+        return res;
+
+        //143ms
+        /*
+        int[] result = new int[2];
+        for(int i=0; i<numbers.length; i++){
+            for(int j=i+1; j<numbers.length; j++){
+                if(numbers[i]+numbers[j] != target){
+                    continue;
+                }
+                result[0]=i+1;
+                result[1]=j+1;
+            }
+        }
         return result;
+        */
     }
 
-
     public static void main(String[] args) {
-        int[] a = {1,2,5,9,3};
-        System.out.println(JSONObject.toJSONString(findTwoNumberIndex(a,10)));
+        int[] numbers = {2,3,4,5};
+        long time = System.currentTimeMillis();
+        System.out.println(JSONObject.toJSONString(twoSum(numbers,9)));
+        System.out.println(System.currentTimeMillis()-time);
     }
 }
