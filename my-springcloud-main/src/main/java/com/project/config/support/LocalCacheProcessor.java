@@ -1,6 +1,5 @@
 package com.project.config.support;
 
-import com.alibaba.fastjson.JSONObject;
 import com.project.annotation.LocalCache;
 import com.project.web.entity.po.cache.LocalCacheValue;
 import org.aspectj.lang.ProceedingJoinPoint;
@@ -55,27 +54,20 @@ public class LocalCacheProcessor {
         long current = System.currentTimeMillis();
         cleanCache(current);
 
-        /** 调试 **/
-        String key = getCacheKey(jp,localCache.key());
-        log.info("[缓存] keySize={},keyAddr={}, key={}",
-                String.valueOf(LocalCachePool.keySet().size()),
-                LocalCachePool.get(key),
-                JSONObject.toJSONString(LocalCachePool.keySet()));
-
         /** 读缓存 **/
-//        String key = getCacheKey(jp,localCache.key());
-        LocalCacheValue value = LocalCachePool.get(key);
-        if(value != null && value.getValues() != null){
-            return value.getValues();
+        String key = getCacheKey(jp,localCache.key());
+        Object value = getCacheValue(key);
+        if(value != null){
+            return value;
         }
 
         /** 无缓存 **/
         try {
             synchronized (this){
                 /** 再次判断缓存中是否有值 **/
-                value = LocalCachePool.get(key);
-                if(value != null && value.getValues() != null){
-                    return value.getValues();
+                value = getCacheValue(key);
+                if(value != null){
+                    return value;
                 }
 
                 Object obj = jp.proceed();
@@ -102,6 +94,15 @@ public class LocalCacheProcessor {
             log.warn("[本地缓存异常] key={},error={}",key,throwable);
         }
 
+        return null;
+    }
+
+    /** 获取缓存key **/
+    private Object getCacheValue(String key){
+        LocalCacheValue value = LocalCachePool.get(key);
+        if(value != null && value.getValues() != null){
+            return value.getValues();
+        }
         return null;
     }
 

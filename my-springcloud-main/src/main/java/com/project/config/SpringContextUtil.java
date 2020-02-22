@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 /**
  * SpringContextUtil
  * 可以配合缓存注解使用
- *
+ * 相关资料：https://blog.csdn.net/xfl4629712/article/details/79983959
  *@author: Weiyf
  *@Date: 2020/2/22 17:57
  */
