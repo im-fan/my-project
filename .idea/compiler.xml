@@ -2,13 +2,7 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
-      <profile name="Maven default annotation processors profile" enabled="true">
-        <sourceOutputDir name="target/generated-sources/annotations" />
-        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
-        <outputRelativeToContentRoot value="true" />
-        <module name="my-springcloud-utils" />
-      </profile>
-      <profile name="Annotation profile for my-springcloud-demo" enabled="true">
+      <profile name="Annotation profile for my-project" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
@@ -28,16 +22,26 @@
           <entry name="$USER_HOME$/software/mvn-jar/joda-time/joda-time/2.9/joda-time-2.9.jar" />
           <entry name="$USER_HOME$/software/mvn-jar/org/projectlombok/lombok/1.18.6/lombok-1.18.6.jar" />
         </processorPath>
-        <module name="my-springcloud-demo-main" />
-        <module name="my-springcloud-demo-es" />
+        <module name="my-springcloud-main" />
+        <module name="my-project-utils" />
+        <module name="my-arithmetic" />
+        <module name="my-springcloud-es" />
+      </profile>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="my-sso" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="my-springcloud-demo" target="1.8" />
-      <module name="my-springcloud-demo-es" target="1.8" />
-      <module name="my-springcloud-demo-main" target="1.8" />
-      <module name="my-springcloud-demo-parent" target="1.8" />
-      <module name="my-springcloud-utils" target="1.8" />
+      <module name="my-arithmetic" target="1.8" />
+      <module name="my-project" target="1.5" />
+      <module name="my-project-utils" target="1.8" />
+      <module name="my-springcloud-es" target="1.8" />
+      <module name="my-springcloud-main" target="1.8" />
+      <module name="my-springcloud-parent" target="1.8" />
+      <module name="my-sso" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>

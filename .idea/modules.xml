@@ -2,11 +2,13 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/my-springcloud-demo.iml" filepath="$PROJECT_DIR$/my-springcloud-demo.iml" />
-      <module fileurl="file://$PROJECT_DIR$/my-springcloud-demo-es/my-springcloud-demo-es.iml" filepath="$PROJECT_DIR$/my-springcloud-demo-es/my-springcloud-demo-es.iml" />
-      <module fileurl="file://$PROJECT_DIR$/my-springcloud-demo-main/my-springcloud-demo-main.iml" filepath="$PROJECT_DIR$/my-springcloud-demo-main/my-springcloud-demo-main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/my-springcloud-demo-parent/my-springcloud-demo-parent.iml" filepath="$PROJECT_DIR$/my-springcloud-demo-parent/my-springcloud-demo-parent.iml" />
-      <module fileurl="file://$PROJECT_DIR$/my-springcloud-utils/my-springcloud-utils.iml" filepath="$PROJECT_DIR$/my-springcloud-utils/my-springcloud-utils.iml" />
+      <module fileurl="file://$PROJECT_DIR$/my-arithmetic/my-arithmetic.iml" filepath="$PROJECT_DIR$/my-arithmetic/my-arithmetic.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/my-project.iml" filepath="$PROJECT_DIR$/.idea/my-project.iml" />
+      <module fileurl="file://$PROJECT_DIR$/my-project-utils/my-project-utils.iml" filepath="$PROJECT_DIR$/my-project-utils/my-project-utils.iml" />
+      <module fileurl="file://$PROJECT_DIR$/my-springcloud-es/my-springcloud-es.iml" filepath="$PROJECT_DIR$/my-springcloud-es/my-springcloud-es.iml" />
+      <module fileurl="file://$PROJECT_DIR$/my-springcloud-main/my-springcloud-main.iml" filepath="$PROJECT_DIR$/my-springcloud-main/my-springcloud-main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/my-springcloud-parent/my-springcloud-parent.iml" filepath="$PROJECT_DIR$/my-springcloud-parent/my-springcloud-parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/my-sso/my-sso.iml" filepath="$PROJECT_DIR$/my-sso/my-sso.iml" />
     </modules>
   </component>
 </project>
