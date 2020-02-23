@@ -363,3 +363,11 @@ docker run --name mysql -v /Users/mac/work/docker/software/mysql5.6/conf/my.cnf:
 ```text
 见BinlogClientService
 ```
+
+
+## 十、本地缓存注解
+### @LocalCache
+```text
+后期可扩展为redis缓存注解简单用法等
+配合SpringContextUtil使用
+```

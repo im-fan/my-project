@@ -89,6 +89,9 @@ public class LocalCacheProcessor {
                         .cachedTime(System.currentTimeMillis())
                         .values(obj)
                         .build());
+
+                /** 返回接口值 **/
+                return obj;
             }
         } catch (Throwable throwable) {
             log.warn("[本地缓存异常] key={},error={}",key,throwable);
