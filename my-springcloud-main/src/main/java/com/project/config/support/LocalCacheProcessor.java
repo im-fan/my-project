@@ -14,6 +14,7 @@ import org.springframework.expression.spel.standard.SpelExpressionParser;
 import org.springframework.expression.spel.support.StandardEvaluationContext;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -71,8 +72,10 @@ public class LocalCacheProcessor {
                 }
 
                 Object obj = jp.proceed();
-                if(obj == null){
-                    //不考虑空值导致的缓存穿透问题
+                //不考虑空值导致的缓存穿透问题
+                if(obj instanceof List && ((List) obj).size() == 0) {
+                    return null;
+                } else if(obj == null) {
                     return null;
                 }
 
