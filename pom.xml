@@ -17,6 +17,7 @@
         <module>my-project-utils</module>
         <module>my-arithmetic</module>
         <module>my-sso</module>
+        <module>my-eureka</module>
     </modules>
 
 </project>

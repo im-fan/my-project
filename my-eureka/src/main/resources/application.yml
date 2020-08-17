@@ -1,0 +1,20 @@
+#server port
+server:
+  port: 8100
+
+spring:
+  application:
+    name: eureka-server
+
+#服务注册中心实例的主机名
+eureka:
+  instance:
+    hostname: 127.0.0.1
+  #是否向注册中心注册自己
+  client:
+    register-with-eureka: false
+    #是否检索服务
+    fetch-registry: false
+    #服务注册中心的配置内容，指定服务注册中心的位置
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
