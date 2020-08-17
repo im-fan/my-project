@@ -1,5 +1,9 @@
 target
 *.iml
-.idea
 *.log
 /.idea/
+my-eureka/src/test/
+my-project-utils/src/test/
+my-springcloud-es/src/test/
+my-sso/src/
+/my-eureka/.idea/
