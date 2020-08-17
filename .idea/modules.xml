@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/my-arithmetic/my-arithmetic.iml" filepath="$PROJECT_DIR$/my-arithmetic/my-arithmetic.iml" />
+      <module fileurl="file://$PROJECT_DIR$/my-eureka/my-eureka.iml" filepath="$PROJECT_DIR$/my-eureka/my-eureka.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/my-project.iml" filepath="$PROJECT_DIR$/.idea/my-project.iml" />
       <module fileurl="file://$PROJECT_DIR$/my-project-utils/my-project-utils.iml" filepath="$PROJECT_DIR$/my-project-utils/my-project-utils.iml" />
       <module fileurl="file://$PROJECT_DIR$/my-springcloud-es/my-springcloud-es.iml" filepath="$PROJECT_DIR$/my-springcloud-es/my-springcloud-es.iml" />

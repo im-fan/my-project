@@ -2,6 +2,7 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
       <profile name="Annotation profile for my-project" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
@@ -22,7 +23,6 @@
           <entry name="$USER_HOME$/software/mvn-jar/joda-time/joda-time/2.9/joda-time-2.9.jar" />
           <entry name="$USER_HOME$/software/mvn-jar/org/projectlombok/lombok/1.18.6/lombok-1.18.6.jar" />
         </processorPath>
-        <module name="my-springcloud-main" />
         <module name="my-project-utils" />
         <module name="my-arithmetic" />
         <module name="my-springcloud-es" />
@@ -32,10 +32,48 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="my-sso" />
+        <module name="my-eureka" />
+      </profile>
+      <profile name="Annotation profile for my-springcloud-main" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$USER_HOME$/software/mvn-jar/org/mapstruct/mapstruct-processor/1.3.0.Final/mapstruct-processor-1.3.0.Final.jar" />
+          <entry name="$USER_HOME$/software/mvn-jar/com/jolira/hickory/1.0.0/hickory-1.0.0.jar" />
+          <entry name="$USER_HOME$/software/mvn-jar/org/mapstruct/mapstruct/1.3.0.Final/mapstruct-1.3.0.Final.jar" />
+          <entry name="$USER_HOME$/software/mvn-jar/junit/junit/4.12/junit-4.12.jar" />
+          <entry name="$USER_HOME$/software/mvn-jar/org/assertj/assertj-core/3.11.1/assertj-core-3.11.1.jar" />
+          <entry name="$USER_HOME$/software/mvn-jar/com/google/guava/guava/19.0/guava-19.0.jar" />
+          <entry name="$USER_HOME$/software/mvn-jar/com/puppycrawl/tools/checkstyle/8.14/checkstyle-8.14.jar" />
+          <entry name="$USER_HOME$/software/mvn-jar/javax/inject/javax.inject/1/javax.inject-1.jar" />
+          <entry name="$USER_HOME$/software/mvn-jar/org/codehaus/plexus/plexus-container-default/1.6/plexus-container-default-1.6.jar" />
+          <entry name="$USER_HOME$/software/mvn-jar/org/springframework/spring-test/4.0.3.RELEASE/spring-test-4.0.3.RELEASE.jar" />
+          <entry name="$USER_HOME$/software/mvn-jar/org/springframework/spring-beans/4.0.3.RELEASE/spring-beans-4.0.3.RELEASE.jar" />
+          <entry name="$USER_HOME$/software/mvn-jar/org/springframework/spring-context/4.0.3.RELEASE/spring-context-4.0.3.RELEASE.jar" />
+          <entry name="$USER_HOME$/software/mvn-jar/joda-time/joda-time/2.9/joda-time-2.9.jar" />
+          <entry name="$USER_HOME$/software/mvn-jar/org/projectlombok/lombok/1.18.6/lombok-1.18.6.jar" />
+          <entry name="$USER_HOME$/software/mvn-jar/org/mapstruct/mapstruct-processor/1.3.0.Final/mapstruct-processor-1.3.0.Final.jar" />
+          <entry name="$USER_HOME$/software/mvn-jar/com/jolira/hickory/1.0.0/hickory-1.0.0.jar" />
+          <entry name="$USER_HOME$/software/mvn-jar/org/mapstruct/mapstruct/1.3.0.Final/mapstruct-1.3.0.Final.jar" />
+          <entry name="$USER_HOME$/software/mvn-jar/junit/junit/4.12/junit-4.12.jar" />
+          <entry name="$USER_HOME$/software/mvn-jar/org/assertj/assertj-core/3.11.1/assertj-core-3.11.1.jar" />
+          <entry name="$USER_HOME$/software/mvn-jar/com/google/guava/guava/19.0/guava-19.0.jar" />
+          <entry name="$USER_HOME$/software/mvn-jar/com/puppycrawl/tools/checkstyle/8.14/checkstyle-8.14.jar" />
+          <entry name="$USER_HOME$/software/mvn-jar/javax/inject/javax.inject/1/javax.inject-1.jar" />
+          <entry name="$USER_HOME$/software/mvn-jar/org/codehaus/plexus/plexus-container-default/1.6/plexus-container-default-1.6.jar" />
+          <entry name="$USER_HOME$/software/mvn-jar/org/springframework/spring-test/4.0.3.RELEASE/spring-test-4.0.3.RELEASE.jar" />
+          <entry name="$USER_HOME$/software/mvn-jar/org/springframework/spring-beans/4.0.3.RELEASE/spring-beans-4.0.3.RELEASE.jar" />
+          <entry name="$USER_HOME$/software/mvn-jar/org/springframework/spring-context/4.0.3.RELEASE/spring-context-4.0.3.RELEASE.jar" />
+          <entry name="$USER_HOME$/software/mvn-jar/joda-time/joda-time/2.9/joda-time-2.9.jar" />
+          <entry name="$USER_HOME$/software/mvn-jar/org/projectlombok/lombok/1.18.6/lombok-1.18.6.jar" />
+        </processorPath>
+        <module name="my-springcloud-main" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="my-arithmetic" target="1.8" />
+      <module name="my-eureka" target="1.8" />
       <module name="my-project" target="1.5" />
       <module name="my-project-utils" target="1.8" />
       <module name="my-springcloud-es" target="1.8" />
@@ -43,5 +81,10 @@
       <module name="my-springcloud-parent" target="1.8" />
       <module name="my-sso" target="1.5" />
     </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="my-eureka" options="-parameters" />
+    </option>
   </component>
 </project>
