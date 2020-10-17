@@ -8,6 +8,11 @@ spring:
 
 #服务注册中心实例的主机名
 eureka:
+  server:
+    #启用主动失效，并且每次主动失效检测间隔为5000ms
+    evictionIntervalTimerInMs: 5000
+    #从ReadWriteMap刷新节点信息到ReadOnlyMap的时间，client读取的是后者，默认30s
+    responseCacheUpdateIntervalMs: 5000
   instance:
     hostname: 127.0.0.1
   #是否向注册中心注册自己
@@ -18,3 +23,9 @@ eureka:
     #服务注册中心的配置内容，指定服务注册中心的位置
     serviceUrl:
       defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+
+# 无认证访问 /service-registry 端点
+#management:
+#  security:
+#    enabled: false
+

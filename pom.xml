@@ -18,6 +18,7 @@
         <module>my-arithmetic</module>
         <module>my-sso</module>
         <module>my-eureka</module>
+        <module>my-canal</module>
     </modules>
 
 </project>
