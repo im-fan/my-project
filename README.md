@@ -17,6 +17,11 @@
 
 - eureka
 
+- canal
+
+- oauth2
+
 ## 准备学习的东西
 - 熔断、服务降级
 - Seata(阿里分布式事务框架)
+- SpringCloudAlibaba
