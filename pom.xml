@@ -19,6 +19,7 @@
         <module>my-sso</module>
         <module>my-eureka</module>
         <module>my-canal</module>
+        <module>my-oauth2</module>
     </modules>
 
 </project>

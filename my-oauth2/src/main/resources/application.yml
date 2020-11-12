@@ -1,0 +1,38 @@
+#server port
+server:
+  port: 8200
+
+spring:
+  application:
+    name: oauth2-server
+  redis:
+    host: localhost
+    port: 6379
+    database: 0
+    timeout: 3000
+    password:
+  security:
+    filter:
+      order: 3
+
+---
+spring:
+  profiles: dev
+
+logging:
+  level:
+    com.project.web: DEBUG
+
+---
+spring:
+  profiles: test
+
+logging:
+  level:
+    com.project.web: DEBUG
+
+---
+spring:
+  profiles: release
+
+
