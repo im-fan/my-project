@@ -1,6 +1,7 @@
 ### SpringCloud + Oauth2
 
 - [参考链接](https://github.com/lexburner/oauth2-demo)
+- [OAuth2 RFC6749中文翻译](https://colobu.com/2017/04/28/oauth2-rfc6749/)
 - [理解OAuth 2.0-阮一峰](http://www.ruanyifeng.com/blog/2014/05/oauth_2_0.html)
 
 #### 授权模式
