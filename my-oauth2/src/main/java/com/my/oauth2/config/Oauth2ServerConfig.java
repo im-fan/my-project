@@ -95,6 +95,10 @@ public class Oauth2ServerConfig {
                     .secret(passwordEncoder.encode("123456"))
                     //注册授权收跳转的路径,每个client都需要注册
                     .redirectUris("http://www.baidu.com")
+                    //token过期时间
+                    .accessTokenValiditySeconds(3)
+                    //刷新token过期时间
+                    .refreshTokenValiditySeconds(9)
 
                     .and()
                     .withClient("client_2")

@@ -71,7 +71,7 @@ POST http://localhost:8200/oauth/token?grant_type=password&scope=select&client_i
 
 - client方式获取access_token
 ```text
-POST http://localhost:8200/oauth/token?grant_type=client_credentials&scope=select&client_id=client_2&client_secret=123456
+GET http://localhost:8200/oauth/token?grant_type=client_credentials&scope=select&client_id=client_2&client_secret=123456
 
 {
     "access_token": "17fc17a9-83b2-41c3-8621-c727d8329bbd",
@@ -89,7 +89,7 @@ POST http://localhost:8200/oauth/token?grant_type=client_credentials&scope=selec
 
 - 刷新token
 ```text
-POST http://localhost:8200/oauth/token?grant_type=refresh_token&refresh_token=396e6c5e-9d79-420a-8b25-945098b10c82&client_id=client_2&client_secret=123456
+GET http://localhost:8200/oauth/token?grant_type=refresh_token&refresh_token=396e6c5e-9d79-420a-8b25-945098b10c82&client_id=client_2&client_secret=123456
 
 {
     "access_token": "e0e64627-f157-4718-81f0-069ca21549ad",
